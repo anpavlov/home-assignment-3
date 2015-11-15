@@ -2,6 +2,7 @@ from math import factorial as math_factorial
 from decimal import *
 
 WRONG_OPERAND_TEXT = 'Wrong operand'
+DIVISION_BY_ZERO_TEXT = 'Division by zero'
 
 
 def add(x, y):
@@ -35,9 +36,9 @@ def divide(x, y):
     try:
         x = Decimal(str(x))
         y = Decimal(str(y))
-        return x / y
+        return float(x / y)
     except DivisionByZero:
-        return "Division by zero error!"
+        return DIVISION_BY_ZERO_TEXT
     except InvalidOperation:
         return WRONG_OPERAND_TEXT
 
